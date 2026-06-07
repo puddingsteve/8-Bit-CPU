@@ -21,7 +21,7 @@ The CPU operates on a central 8-bit bus based on the Von Neumann architecture. I
 ### Acknowledgements
 The theoretical foundation of this project was deeply inspired by the book <a href="https://books.google.ca/books/about/The_Elements_of_Computing_Systems.html?id=WP8uEAAAQBAJ&source=kp_book_description&redir_esc=y">_The Elements of Computing Systems_</a> and its companion course <a href="https://www.nand2tetris.org/">Nand to Tetris</a>. These resources provided the conceptual framework required to scale elemental logic gates into complex modules such as Arithmetic Logic Unit (ALU).
 
-The physical breadboard implementation and overall structural approach were profoundly inspired by Ben Eater's <a href="https://youtu.be/HyznrdDSSGM?si=WMluEy4aOkz28rLG">8-bit computer video series</a>, supplemented by hardware design tutorials from <a href="【[从零搭建计算机保姆级教程01]——逻辑门原理】 https://www.bilibili.com/video/BV1VS7AztETt/?share_source=copy_web&vd_source=c48ed64ac46082e95058a657100d5dac">Bilibili</a>.
+The physical breadboard implementation and overall structural approach were profoundly inspired by Ben Eater's <a href="https://youtu.be/HyznrdDSSGM?si=WMluEy4aOkz28rLG">8-bit computer video series</a>, supplemented by hardware design tutorials from <a href="https://www.bilibili.com/video/BV1VS7AztETt/?share_source=copy_web&vd_source=c48ed64ac46082e95058a657100d5dac">Bilibili</a>.
 
 
 
