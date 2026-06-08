@@ -35,15 +35,16 @@ The physical breadboard implementation and overall structural approach were prof
 <div align="center">
   <img src="Uploads/Structure.png" width="500" alt="High-level Structure Diagram">
 </div>
+
 This project applied modular apporach due to it's complecxity. The architecture of CPU was separated in to distinct and madageable sections, each can be built and tested individually and eventually combining them to form the completed system.
 
 ### Bus
 
 The entire system communicates via a 8-bit central Bus formed by wires. It transmits data between every module, and the data on bus was showned by bus monitor formed by 8 Leds connecting to each bus position. An mannual input for bus is built with DIP switch to entering data to bus mannually.
 
-- [Bus Monitor Schematic](Uploads/Schematics.pdf#page=12)
+- [Bus Monitor Schematic]
 
-- [Mannual Input Schematic](Uploads/Schematics.pdf#page=13)
+- [Mannual Input Schematic]
 
 ### Clock
 
