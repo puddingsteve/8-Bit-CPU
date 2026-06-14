@@ -1,5 +1,5 @@
 # 8-Bit CPU
-<!-- markdownlint-disable MD033 -->
+
 An 8-bit breadboard CPU built from scratch using 74-series logic gates.
 
 <div align="center">
@@ -128,7 +128,7 @@ The Instruction Decoder acts as the brain and translator of the CPU. It translat
 
 This translation is achieved using two AT28C16 EEPROM chips. While each chip possesses 11 address lines capable of storing 2,048 bytes of data, this architecture only utilizes the lower 8 bits for addressing (pins A8 through A10 are tied directly to ground). The decoding process functions as a massive hardware look-up table. The input data forms a specific memory address, and the EEPROMs output a pre-programmed 16-bit control word (8 bits from each chip) dictated by the Instruction Set Architecture (ISA).
 
-The 8-bit input address sent to the EEPROMs is dynamically constructed from three distinct sources.(table)
+The 8-bit input address sent to the EEPROMs is dynamically constructed from three sources.
 
 | EEPROM Address | Name | Description |
 | :--: | :--: | :----- |
@@ -266,8 +266,8 @@ Once the instruction is fetched, the Control Unit executes the specific micro-st
       <td><strong>JNZ</strong></td>
       <td>Jump Not Zero</td>
       <td>
-        <em>If Carry Flag = 0:</em> <strong>T2:</strong> (None)<br>
-        <em>If Carry Flag = 1:</em> <strong>T2:</strong> <kbd>PCI</kbd>, <kbd>IO</kbd>
+        <em>If Zero Flag = 0:</em> <strong>T2:</strong> (None)<br>
+        <em>If Zero Flag = 1:</em> <strong>T2:</strong> <kbd>PCI</kbd>, <kbd>IO</kbd>
       </td>
       <td>Conditional branch. Jumps to the specified address only if the Carry flag is active. Otherwise, acts as a NOP.</td>
     </tr>
@@ -497,7 +497,7 @@ Building a CPU on breadboards exposes the circuit to physical and electrical rea
 
 During the initial testing of the register modules, the 74LS173 chips failed to load data from bus. A visual inspection of the wiring against the schematics revealed no obvious errors. However, checking the active circuit with a multimeter revealed that the high-state of the clock signal was peaking at less than 2.0 Volts. This fell below the minimum Input High Voltage threshold ($V_{IH}$) required to trigger TTL logic gates.
 
-The cause of this is the status LED was  wired in series with the clock signal line,and the forward voltage drop across the LED starved the downstream logic chips of the required operating voltage. To solve this,the status LED was re-routed to run in parallel with the output, allowing the clock signal wire to connect directly to the chips without obstruction. This restored the full 5V logic level, enabling the registers to capture data functionally.
+The cause was a status LED wired in series with the clock signal line. The forward voltage drop across the LED starved the downstream logic chips of the required operating voltage. To solve this, the status LED was re-routed to run in parallel with the output, allowing the clock signal wire to connect directly to the chips without obstruction. This restored the full 5V logic level, enabling the registers to capture data functionally.
 
 ### Double-Clocking
 
@@ -507,7 +507,7 @@ This signal degradation was amplified by two factors: parasitic inductance cause
 
 This issue was addressed on multiple aspects. The board layout was reorganized to place the clock  module closer to the counter which shortening the signal path, and looping wires were replaced with trimmed wire connections that sat flat against the board. Meanwhile, 0.1µF decoupling capacitors were placed near the affected chips to filter out noise. These hardware optimizations stabilized the clock edge.
 
-## Future Improvement
+## Future Improvements
 
 While the current breadboard CPU is functional and Turing complete, the modular architecture allows for future expansions. Several planned hardware upgrades aim to enhance the system's usability and computational power:
 
