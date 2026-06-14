@@ -296,7 +296,7 @@ To physically write the ISA table into the AT28C16 EEPROMs, a custom hardware pr
 
 Writing data to these EEPROMs requires simultaneously driving 11 address lines, 8 data lines, and a write-enable pin. Because the Arduino Nano lacks sufficient General-Purpose Input/Output (GPIO) pins to handle this concurrently, the module incorporates two 74HC595 8-bit shift registers to overcome the limitation. By using the shift registers, the Arduino only needs three pins (Data, Clock, and Latch) to transmit the address sequence serially. The 74HC595 chips temporarily store this serial input and output it in parallel to the EEPROM's address pins, expanding the Arduino's output capabilities.
 
-During the programming phase, the two CPU EEPROMs are inserted into the programmer module one at a time. The Arduino executes a custom script to rapidly write the microcode to the memory addresses. One chip is programmed with the upper 8 bits (the left side) of the 16-bit control word, and the other is programmed with the lower 8 bits (the right side).
+During the programming phase, the two CPU EEPROMs are inserted into the programmer module one at a time. The Arduino executes a [custom script](/Uploads/EEPROM.ino) to rapidly write the microcode to the memory addresses. One chip is programmed with the upper 8 bits (the left side) of the 16-bit control word, and the other is programmed with the lower 8 bits (the right side).
 
 - [Hardware Programmer Schematic](/Uploads/Schematics/EEPROM.png)
 
