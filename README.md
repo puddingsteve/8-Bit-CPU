@@ -165,7 +165,7 @@ The 16-bit control word is organized as follows. Signals that are active-low (re
 | $\overline{\text{AI}}$ | A Register In | Loads the current bus value into Register A. |
 | $\overline{\text{AO}}$ | A Register Out | Asserts the contents of Register A onto the bus. |
 | $\overline{\text{BI}}$ | B Register In | Loads the current bus value into Register B. |
-| ${\text{FI}}$ | Flag In | Loads the current ALU status flag (Zero/Carry) into the Flag Register. |
+| ${\text{FI}}$ | Flag In | Loads the current ALU status flag (Zero) into the Flag Register. |
 
 Every outgoing control line is monitored by a LED, providing a real-time visual representation of the active control word during execution. Moreover, this module features a manual Clear (CLR) circuit triggered by a physical pushbutton tied to power. This circuit distributes a global reset signal to all registers and counters, employing inverters to satisfy both active-high and active-low reset requirements across the different chips.
 
